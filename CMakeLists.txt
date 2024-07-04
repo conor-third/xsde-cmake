@@ -16,3 +16,8 @@ include_directories(
 # adding subdirectories to build nested CMakeLists.txt files
 add_subdirectory(libxsde) # library
 add_subdirectory(example-hybrid-hello) # example
+
+install(DIRECTORY libxsde/xsde DESTINATION include PATTERN "*.txt" EXCLUDE
+                                            PATTERN "*.in" EXCLUDE
+                                            PATTERN "makefile" EXCLUDE
+                                            PATTERN "nmakefile" EXCLUDE)

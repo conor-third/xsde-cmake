@@ -552,5 +552,4 @@ set(XSDE_FILES ${c_tun} ${cxx_tun})
 add_library(xsde STATIC ${XSDE_FILES})
 
 install(TARGETS xsde 
-		LIBRARY DESTINATION lib
 		ARCHIVE DESTINATION lib)
