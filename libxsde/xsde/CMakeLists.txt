@@ -551,5 +551,5 @@ configure_file("${PROJECT_SOURCE_DIR}/config.h.in"
 set(XSDE_FILES ${c_tun} ${cxx_tun})
 add_library(xsde STATIC ${XSDE_FILES})
 
-install(TARGETS xsde 
+install(TARGETS xsde EXPORT xsdeTargets
 		ARCHIVE DESTINATION lib)
