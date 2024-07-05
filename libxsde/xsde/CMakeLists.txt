@@ -553,3 +553,5 @@ add_library(xsde STATIC ${XSDE_FILES})
 
 install(TARGETS xsde EXPORT xsdeTargets
 		ARCHIVE DESTINATION lib)
+
+install(FILES "${PROJECT_BINARY_DIR}/include/xsde/config.h" DESTINATION include/xsde)
