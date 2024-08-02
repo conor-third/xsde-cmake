@@ -34,7 +34,7 @@ set(XSDE_LONGLONG FALSE)
 set(XSDE_SNPRINTF TRUE)
 
 set(XSDE_PARSER_VALIDATION TRUE)
-set(XSDE_SERIALIZER_VALIDATION FALSE)
+set(XSDE_SERIALIZER_VALIDATION TRUE)
 set(XSDE_REGEXP TRUE)
 
 set(XSDE_REUSE_STYLE_MIXIN FALSE)
@@ -61,7 +61,7 @@ set(c_tun
 	c/expat/xmlparse.c c/expat/xmlrole.c c/expat/xmltok.c)
 set(c_tun ${c_tun} c/genx/genx.c c/genx/char-props.c)
 
-if(XSDE_PARSER_VALIDATION OR {XSDE_SERIALIZER_VALIDATION)
+if(XSDE_PARSER_VALIDATION OR XSDE_SERIALIZER_VALIDATION)
 	if(XSDE_REGEXP)
 		set(c_tun ${c_tun} c/regexp/chvalid.c c/regexp/xmlunicode.c c/regexp/xmlregexp.c)
 	endif()
@@ -368,8 +368,7 @@ set(cxx_tun ${cxx_tun}  cxx/serializer/genx/document.cxx cxx/serializer/genx/xml
 
 # # Serializer implementations.
 # #
-IF (XSDE_BUILD_SERIALIZER)
-
+IF (XSDE_SERIALIZER_VALIDATION)
 	if(XSDE_SERIALIZER_VALIDATION)
 		set(cxx_tun ${cxx_tun}                                           
 		cxx/serializer/validating/serializer.cxx            
